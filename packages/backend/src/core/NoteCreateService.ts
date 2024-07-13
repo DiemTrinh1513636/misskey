@@ -439,6 +439,7 @@ export class NoteCreateService implements OnApplicationShutdown {
 		}
 
 		// 投稿を作成
+		console.log('\n\n\n debug:  ~ NoteCreateService ~ insertNote ~ start insert:', insert.id);
 		try {
 			if (insert.hasPoll) {
 				// Start transaction
@@ -484,6 +485,7 @@ export class NoteCreateService implements OnApplicationShutdown {
 		host: MiUser['host'];
 		isBot: MiUser['isBot'];
 	}, data: Option, silent: boolean, tags: string[], mentionedUsers: MinimumUser[]) {
+		console.log('\n\n\n debug:  ~ NoteCreateService ~ postNoteCreated:', note.id);
 		const meta = await this.metaService.fetch();
 
 		this.notesChart.update(note, true);

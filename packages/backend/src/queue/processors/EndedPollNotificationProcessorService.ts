@@ -32,6 +32,8 @@ export class EndedPollNotificationProcessorService {
 
 	@bindThis
 	public async process(job: Bull.Job<EndedPollNotificationJobData>): Promise<void> {
+		console.log('\n\n\n debug:  ~ EndedPollNotificationProcessorService ~ process ~ job:', job);
+
 		const note = await this.notesRepository.findOneBy({ id: job.data.noteId });
 		if (note == null || !note.hasPoll) {
 			return;

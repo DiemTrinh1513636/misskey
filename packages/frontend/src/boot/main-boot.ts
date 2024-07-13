@@ -243,6 +243,8 @@ export async function mainBoot() {
 
 		main.on('unreadNotification', () => {
 			const unreadNotificationsCount = ($i?.unreadNotificationsCount ?? 0) + 1;
+			console.log('\n\n\n debug:  ~ main.on ~ unreadNotificationsCount:', unreadNotificationsCount);
+
 			updateAccount({
 				hasUnreadNotification: true,
 				unreadNotificationsCount,

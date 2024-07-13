@@ -34,6 +34,8 @@ export class WebhookDeliverProcessorService {
 
 	@bindThis
 	public async process(job: Bull.Job<WebhookDeliverJobData>): Promise<string> {
+		console.log('\n\n\n debug:  ~ WebhookDeliverProcessorService ~ process ~ process:', process);
+
 		try {
 			this.logger.debug(`delivering ${job.data.webhookId}`);
 

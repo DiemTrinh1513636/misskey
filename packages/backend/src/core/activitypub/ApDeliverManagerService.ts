@@ -105,6 +105,8 @@ class DeliverManager {
 	 */
 	@bindThis
 	public async execute(): Promise<void> {
+		console.log('\n\n\n debug:  ~ DeliverManager ~ execute ~ execute:');
+
 		// The value flags whether it is shared or not.
 		// key: inbox URL, value: whether it is sharedInbox
 		const inboxes = new Map<string, boolean>();
